@@ -11,15 +11,11 @@
   .frame{width:720px;height:720px;position:relative;background:#F9F9EF;border:1.5px solid #dde1e6;border-radius:16px;overflow:hidden}
   .stage{position:relative;width:100%;height:100%}
 
-  /* Node container — positioned by center point */
   .node{position:absolute;z-index:3;cursor:pointer;transform:translate(-50%,-50%);transition:transform .2s}
   .node:hover,.node.active{transform:translate(-50%,-50%) scale(1.12)}
-
-  .node-icon{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px rgba(0,0,0,.13);position:relative;transition:box-shadow .2s}
-  .node:hover .node-icon,.node.active .node-icon{box-shadow:0 5px 20px rgba(0,0,0,.2)}
+  .node-icon{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px rgba(0,0,0,.1);position:relative;transition:box-shadow .2s}
+  .node:hover .node-icon,.node.active .node-icon{box-shadow:0 5px 20px rgba(0,0,0,.18)}
   .node-icon svg{width:30px;height:30px}
-
-  /* Label — absolutely positioned, shifted per node via inline style */
   .node-label{position:absolute;font-family:'Outfit',sans-serif;font-weight:600;font-size:12.5px;color:#002C44;white-space:nowrap}
 
   .node.active .node-icon::after{content:'';position:absolute;inset:-7px;border-radius:50%;border:2.5px solid var(--clr);animation:ring 1.2s ease-out infinite}
@@ -41,103 +37,103 @@
     <svg viewBox="0 0 720 720" style="position:absolute;inset:0;z-index:1;pointer-events:none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <marker id="a" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7Z" fill="#002C44"/></marker>
-        <marker id="ag" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7Z" fill="#62BCD1"/></marker>
+        <marker id="ag" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7Z" fill="#aaa"/></marker>
       </defs>
 
       <!-- MAIN CYCLE (solid, dark navy) -->
-      <!-- Supply(220,220) → Sale(390,155) -->
-      <path d="M252,210 C300,172 348,156 372,154" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
-      <!-- Sale(390,155) → Use(530,255) -->
-      <path d="M420,164 C458,178 498,210 520,242" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
-      <!-- Use(530,255) → Drop-off(555,430) -->
-      <path d="M545,290 C558,340 560,388 558,400" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
-      <!-- Drop-off(555,430) → Collection(430,560) -->
-      <path d="M542,460 C522,502 472,546 448,556" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
-      <!-- Collection(430,560) → Processing(255,540) -->
-      <path d="M398,566 C348,572 302,558 278,546" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
-      <!-- Processing(255,540) → Recycling/Recovery(160,385) -->
-      <path d="M238,520 C208,485 178,438 168,412" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
-      <!-- Recycling/Recovery(160,385) → Supply(220,220) -->
-      <path d="M168,355 C175,305 192,258 210,238" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Supply(212,217) → Sale(384,156) -->
+      <path d="M245,208 C295,172 345,158 366,155" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Sale(384,156) → Use(538,253) -->
+      <path d="M414,164 C455,180 505,218 528,242" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Use(538,253) → Drop-off/Collection(558,434) -->
+      <path d="M548,288 C560,338 562,390 560,405" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Drop-off/Collection(558,434) → Processing(429,563) -->
+      <path d="M545,462 C525,505 470,550 448,560" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Processing(429,563) → Recycling/Recovery(248,543) -->
+      <path d="M398,568 C348,574 300,562 272,550" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Recycling/Recovery(248,543) → Manufacturing(151,389) -->
+      <path d="M232,524 C202,488 172,435 160,415" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
+      <!-- Manufacturing(151,389) → Supply(212,217) -->
+      <path d="M160,358 C168,308 188,256 204,236" fill="none" stroke="#002C44" stroke-width="2.2" marker-end="url(#a)"/>
 
-      <!-- SECONDARY (dashed, light teal) -->
-      <!-- Raw Materials(90,135) → Supply(220,220) -->
-      <path d="M120,148 C150,168 185,195 205,212" fill="none" stroke="#62BCD1" stroke-width="1.6" stroke-dasharray="6,5" marker-end="url(#ag)"/>
-      <!-- Use → Landfill -->
-      <path d="M558,268 C578,274 602,278 618,280" fill="none" stroke="#62BCD1" stroke-width="1.6" stroke-dasharray="6,5" marker-end="url(#ag)"/>
+      <!-- SECONDARY (dashed, grey) -->
+      <!-- Raw Materials(90,132) → Supply(212,217) -->
+      <path d="M118,145 C148,165 182,195 200,210" fill="none" stroke="#aaa" stroke-width="1.6" stroke-dasharray="6,5" marker-end="url(#ag)"/>
+      <!-- Recycling/Recovery(248,543) → Landfill(120,630) -->
+      <path d="M225,558 C192,580 158,605 140,618" fill="none" stroke="#aaa" stroke-width="1.6" stroke-dasharray="6,5" marker-end="url(#ag)"/>
     </svg>
 
     <!-- ===== NODES ===== -->
-    <!-- Circle: center(360,370), r=210, 7 nodes at 51.43° intervals starting 315° -->
+    <!-- 7 on circle (center 360,365  r=210  51.43° apart from 315°) -->
 
-    <!-- RAW MATERIALS — off circle, upper-left -->
-    <div class="node" style="left:90px;top:135px;--clr:#002C44" data-id="raw">
-      <div class="node-icon" style="background:#002C44">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F9F9EF" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    <!-- RAW MATERIALS — off circle — GREY -->
+    <div class="node" style="left:90px;top:132px;--clr:#d9d9d9" data-id="raw">
+      <div class="node-icon" style="background:#d9d9d9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       </div>
       <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Raw Materials</span>
     </div>
 
-    <!-- SUPPLY — upper-left of circle — MUSTARD -->
-    <div class="node" style="left:220px;top:220px;--clr:#FEBC11" data-id="supply">
-      <div class="node-icon" style="background:#FEBC11">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#002C44" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    <!-- SUPPLY — 315° — BLUE (highlighted) -->
+    <div class="node" style="left:212px;top:217px;--clr:#324AD9" data-id="supply">
+      <div class="node-icon" style="background:#324AD9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
       </div>
       <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Supply</span>
     </div>
 
-    <!-- SALE — top of circle — MUSTARD -->
-    <div class="node" style="left:390px;top:155px;--clr:#FEBC11" data-id="sale">
-      <div class="node-icon" style="background:#FEBC11">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#002C44" stroke-width="2" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="7" cy="7" r="1" fill="#002C44"/></svg>
+    <!-- SALE — 6.4° — GREY -->
+    <div class="node" style="left:384px;top:156px;--clr:#d9d9d9" data-id="sale">
+      <div class="node-icon" style="background:#d9d9d9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="7" cy="7" r="1" fill="#555"/></svg>
       </div>
       <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Sale</span>
     </div>
 
-    <!-- USE — right of circle — MUSTARD -->
-    <div class="node" style="left:530px;top:255px;--clr:#FEBC11" data-id="use">
-      <div class="node-icon" style="background:#FEBC11">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#002C44" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+    <!-- USE — 57.9° — GREY -->
+    <div class="node" style="left:538px;top:253px;--clr:#d9d9d9" data-id="use">
+      <div class="node-icon" style="background:#d9d9d9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
       </div>
       <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Use</span>
     </div>
 
-    <!-- DROP-OFF — right of circle — BLUE -->
-    <div class="node" style="left:555px;top:430px;--clr:#324AD9" data-id="dropoff">
+    <!-- DROP-OFF / COLLECTION — 109.3° — BLUE (highlighted) -->
+    <div class="node" style="left:558px;top:434px;--clr:#324AD9" data-id="dropoff">
       <div class="node-icon" style="background:#324AD9">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F9F9EF" stroke-width="2" stroke-linecap="round"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 3v9"/><path d="M8 8l4 4 4-4"/><path d="M3 15h18l-2 6H5L3 15z"/></svg>
       </div>
-      <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Drop-off</span>
+      <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Drop-off / Collection</span>
     </div>
 
-    <!-- COLLECTION — bottom-right — BLUE -->
-    <div class="node" style="left:430px;top:560px;--clr:#324AD9" data-id="collection">
-      <div class="node-icon" style="background:#324AD9">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F9F9EF" stroke-width="2" stroke-linecap="round"><path d="M3 6h18l-2 13H5L3 6z"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/><path d="M10 11v4"/><path d="M14 11v4"/></svg>
-      </div>
-      <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Collection</span>
-    </div>
-
-    <!-- PROCESSING — bottom-left — TEAL -->
-    <div class="node" style="left:255px;top:540px;--clr:#198185" data-id="processing">
-      <div class="node-icon" style="background:#198185">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F9F9EF" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+    <!-- PROCESSING — 160.7° — GREY -->
+    <div class="node" style="left:429px;top:563px;--clr:#d9d9d9" data-id="processing">
+      <div class="node-icon" style="background:#d9d9d9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
       </div>
       <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Processing</span>
     </div>
 
-    <!-- RECYCLING / RECOVERY — left of circle — TEAL -->
-    <div class="node" style="left:160px;top:385px;--clr:#198185" data-id="recycling">
-      <div class="node-icon" style="background:#198185">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F9F9EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/><path d="M20.49 15a9 9 0 01-14.85 3.36L1 14"/></svg>
+    <!-- RECYCLING / RECOVERY — 212.1° — BLUE (highlighted) -->
+    <div class="node" style="left:248px;top:543px;--clr:#324AD9" data-id="recycling">
+      <div class="node-icon" style="background:#324AD9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/><path d="M20.49 15a9 9 0 01-14.85 3.36L1 14"/></svg>
       </div>
-      <span class="node-label" style="top:78px;right:8px;text-align:right">Recycling /<br>Recovery</span>
+      <span class="node-label" style="top:78px;right:0;text-align:right">Recycling /<br>Recovery</span>
     </div>
 
-    <!-- LANDFILL — off circle, right side -->
-    <div class="node" style="left:640px;top:288px;--clr:#62BCD1" data-id="landfill">
-      <div class="node-icon" style="background:#62BCD1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#002C44" stroke-width="2" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V11l7-7 7 7v10"/><path d="M9 21v-4h6v4"/></svg>
+    <!-- MANUFACTURING — 263.6° — GREY -->
+    <div class="node" style="left:151px;top:389px;--clr:#d9d9d9" data-id="manufacturing">
+      <div class="node-icon" style="background:#d9d9d9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"><path d="M2 20h20"/><path d="M5 20V10l4 4V10l4 4V4l6 8v8"/></svg>
+      </div>
+      <span class="node-label" style="top:78px;right:5px;text-align:right">Manufacturing</span>
+    </div>
+
+    <!-- LANDFILL — off circle, lower-left — GREY -->
+    <div class="node" style="left:120px;top:635px;--clr:#d9d9d9" data-id="landfill">
+      <div class="node-icon" style="background:#d9d9d9">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V11l7-7 7 7v10"/><path d="M9 21v-4h6v4"/></svg>
       </div>
       <span class="node-label" style="top:78px;left:50%;transform:translateX(-50%)">Landfill</span>
     </div>
@@ -155,48 +151,48 @@
 const info = {
   raw: {
     title: "Raw Materials",
-    color: "#002C44",
+    color: "#d9d9d9",
     text: "Natural resources are extracted and processed into base materials. This is the starting point of the product lifecycle before materials enter the supply chain."
   },
   supply: {
     title: "Supply",
-    color: "#FEBC11",
+    color: "#324AD9",
     text: "Products are supplied into the Ontario market. Producers report the quantity of products they supply, which determines their obligations under Ontario's producer responsibility framework."
   },
   sale: {
     title: "Sale",
-    color: "#FEBC11",
+    color: "#d9d9d9",
     text: "Products are sold to consumers and businesses through retail and wholesale channels. This is the point at which producer responsibility obligations are typically triggered."
   },
   use: {
     title: "Use",
-    color: "#FEBC11",
+    color: "#d9d9d9",
     text: "Consumers and businesses use products during their functional lifespan. Product design and durability influence how long this phase lasts before end-of-life."
   },
   dropoff: {
-    title: "Drop-off",
+    title: "Drop-off / Collection",
     color: "#324AD9",
-    text: "End-of-life products are brought to designated drop-off locations by consumers. These include municipal depots, retail take-back locations, and collection events."
-  },
-  collection: {
-    title: "Collection",
-    color: "#324AD9",
-    text: "Dropped-off products are collected and consolidated by Producer Responsibility Organizations (PROs) through depot, curbside, retail, and event-based programs."
+    text: "End-of-life products are brought to designated drop-off locations and collected by Producer Responsibility Organizations (PROs) through depot, curbside, retail take-back, and event-based programs."
   },
   processing: {
     title: "Processing",
-    color: "#198185",
+    color: "#d9d9d9",
     text: "Collected materials are sorted, dismantled, and prepared for recycling or recovery. This stage separates recoverable materials from residual waste."
   },
   recycling: {
     title: "Recycling / Recovery",
-    color: "#198185",
+    color: "#324AD9",
     text: "Materials are converted back into secondary raw materials or recovered for energy. Recovery rates measure how much collected material is successfully diverted from landfill."
+  },
+  manufacturing: {
+    title: "Manufacturing",
+    color: "#d9d9d9",
+    text: "Raw and recovered materials are transformed into finished products. Manufacturing processes determine a product's material composition, recyclability, and end-of-life options."
   },
   landfill: {
     title: "Landfill",
-    color: "#62BCD1",
-    text: "Products not collected, or residual material that cannot be recycled, end up in landfill. Reducing this flow is a core objective of extended producer responsibility."
+    color: "#d9d9d9",
+    text: "Residual material that cannot be recycled or recovered ends up in landfill. Reducing this flow is a core objective of extended producer responsibility."
   }
 };
 
